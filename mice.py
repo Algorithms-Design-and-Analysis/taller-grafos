@@ -1,5 +1,3 @@
-#TODO: CAMBIAR EL VALOR DE INFINITO EN LA LINEA 37 SI SE CONSIDERA NECESARIO 
-
 def floyd_warshall(tiempos):
 
     celdas_cantidad = len(tiempos)
@@ -34,7 +32,7 @@ def main():
             arco = input().split(" ")
             celda_inicial, celda_final, tiempo = int(arco[0]), int(arco[1]), float(arco[2])
             matriz_adyacencia[celda_inicial-1][celda_final-1] = tiempo
-        infinito = 999
+        infinito = float('inf')
         for fila in range(len(matriz_adyacencia)):
             for columna in range(len(matriz_adyacencia[0])):
                 matriz_adyacencia[fila][columna] = 0 if fila == columna else (infinito if matriz_adyacencia[fila][columna] == -1 else matriz_adyacencia[fila][columna])
